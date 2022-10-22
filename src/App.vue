@@ -91,8 +91,17 @@ computed:{
           <h3 class="h-infopoke">Height: <span class="spanpoke">{{(selectedPokemon.height + 2.74).toFixed(2)}} cm</span></h3>
           <h3 class="h-infopoke">Weight: <span class="spanpoke">{{(selectedPokemon.weight + 0.45359237).toFixed(0)}} kgs</span></h3>
         </div>
+        <div class="stats-area">
+          <h2>Stats</h2>
+          <table>
+            <tr v-for="stat in selectedPokemon.stats" :key="stat.stat.name">
+              <td>{{stat.stat.name}}</td>
+              <td>{{stat.base_stat}}</td>
+            </tr>
+          </table>
+        </div>
         <div class="moves-area">
-          <h2>Pokemon Abillities</h2>
+          <h2>Abillities</h2>
           <table>
             <tr>
               <th>Move</th>
@@ -104,6 +113,7 @@ computed:{
             </tr>
           </table>
         </div>
+      
       </div>
 
       <div class="actions">
@@ -235,6 +245,30 @@ body
     font-size: 0.8em
     font-weight: 500
     color: #646cff
+.stats-area
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  margin-bottom: 20px  
+  h2
+    font-size: 1.2em
+    font-weight: 500
+    margin-bottom: 10px
+  table
+    width: 100%
+    border-collapse: collapse
+    border: 1px solid #000
+    th
+      font-size: 1.2em
+      font-weight: 500
+      padding: 10px
+      border: 1px solid #000
+    td
+      font-size: 1em
+      font-weight: 500
+      padding: 10px
+      border: 1px solid #000
 .moves-area
   display: flex
   flex-direction: column
@@ -243,7 +277,7 @@ body
   margin-bottom: 20px 
   h2
     font-size: 1.2em
-    font-weight: bold
+    font-weight: 500
     margin-bottom: 10px
   table
     border-collapse: collapse
