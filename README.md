@@ -1,7 +1,8 @@
 # PokeVue
 
 Pokedex criada utilizando Vue.JS 3.
-Tecnologias e Libs utilizadas.
+
+Tecnologias e Libs utilizadas:
 
 - Javascript
 - Vue.Js
